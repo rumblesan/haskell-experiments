@@ -10,14 +10,14 @@ instance Functor MyTree where
 
 
 
-addValue :: (Ord value) => MyTree value -> value -> MyTree value
-addValue MyTreeEmpty newValue = MyTreeLeaf newValue
-addValue l@(MyTreeLeaf oldValue) newValue | newValue < oldValue = MyTreeTree oldValue (MyTreeLeaf newValue) MyTreeEmpty
-                                          | newValue > oldValue = MyTreeTree oldValue MyTreeEmpty (MyTreeLeaf newValue)
-                                          | otherwise           = l
-addValue t@(MyTreeTree oldValue left right) newValue | newValue < oldValue = MyTreeTree oldValue (addValue left newValue) right
-                                                     | newValue > oldValue = MyTreeTree oldValue left (addValue right newValue)
-                                                     | otherwise           = t
+add :: (Ord value) => MyTree value -> value -> MyTree value
+add MyTreeEmpty newValue = MyTreeLeaf newValue
+add l@(MyTreeLeaf oldValue) newValue | newValue < oldValue = MyTreeTree oldValue (MyTreeLeaf newValue) MyTreeEmpty
+                                     | newValue > oldValue = MyTreeTree oldValue MyTreeEmpty (MyTreeLeaf newValue)
+                                     | otherwise           = l
+add t@(MyTreeTree oldValue left right) newValue | newValue < oldValue = MyTreeTree oldValue (add left newValue) right
+                                                | newValue > oldValue = MyTreeTree oldValue left (add right newValue)
+                                                | otherwise           = t
 
 isEmpty :: MyTree value -> Bool
 isEmpty tree = case tree of
