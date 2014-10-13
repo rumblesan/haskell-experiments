@@ -1,0 +1,18 @@
+name:                experiments
+version:             0.1.0.0
+synopsis:            My Haskell Experiments
+homepage:            www.rumblesan.com
+license:             BSD3
+license-file:        LICENSE
+author:              Guy John
+maintainer:          guy@rumblesan.com
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable experiments
+  main-is:             Main.hs
+  -- other-modules:       
+  -- other-extensions:    
+  build-depends:       base >=4.7 && <4.8
+  hs-source-dirs:      src
+  default-language:    Haskell2010
