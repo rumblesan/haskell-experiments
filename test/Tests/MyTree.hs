@@ -14,7 +14,8 @@ myTreeTests =
     testCase "Adding data works as expected" test_addingData,
     testProperty "Functor mapping works" prop_functorFmapWorks,
     testProperty "Functor fmap with id function is correct" prop_functorWithId,
-    testProperty "Functor fmap is commutative" prop_functorCommutative
+    testProperty "Functor fmap is commutative" prop_functorCommutative,
+    testProperty "toList works as expected" prop_myTreeToListWorks
   ]
 
 
@@ -55,4 +56,13 @@ prop_functorCommutative ints =
   in
     tree1 == tree2
 
+prop_myTreeToListWorks :: [Integer] -> Bool
+prop_myTreeToListWorks input =
+  let
+    tree1 = foldl add MyTreeEmpty input
+    list1 = toList tree1
+    tree2 = foldl add MyTreeEmpty list1
+    list2 = toList tree2
+  in
+    (list1 == list2)
 

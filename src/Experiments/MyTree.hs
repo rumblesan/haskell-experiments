@@ -19,6 +19,11 @@ add t@(MyTreeTree oldValue left right) newValue | newValue < oldValue = MyTreeTr
                                                 | newValue > oldValue = MyTreeTree oldValue left (add right newValue)
                                                 | otherwise           = t
 
+toList :: MyTree value -> [value]
+toList  MyTreeEmpty              = []
+toList (MyTreeLeaf v)            = [v]
+toList (MyTreeTree v left right) = (toList right) ++ [v] ++ (toList left)
+
 isEmpty :: MyTree value -> Bool
 isEmpty tree = case tree of
   MyTreeEmpty -> True
