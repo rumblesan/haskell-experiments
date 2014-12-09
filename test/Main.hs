@@ -6,6 +6,7 @@ import Data.Monoid
 
 import Tests.MyTree (myTreeTests)
 import Tests.HaskVM (haskVMTests)
+import Tests.StateParser (stateParserTests)
 
 
 main :: IO ()
@@ -13,7 +14,8 @@ main =
   defaultMainWithOpts
     [
       myTreeTests,
-      haskVMTests
+      haskVMTests,
+      stateParserTests
     ]
     mempty
 
