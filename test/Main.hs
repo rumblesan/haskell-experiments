@@ -5,11 +5,15 @@ import Test.Framework
 import Data.Monoid
 
 import Tests.MyTree (myTreeTests)
+import Tests.HaskVM (haskVMTests)
 
 
 main :: IO ()
 main =
   defaultMainWithOpts
-    [myTreeTests]
+    [
+      myTreeTests,
+      haskVMTests
+    ]
     mempty
 
