@@ -1,4 +1,4 @@
-module Experiments.Conway where
+module Examples.Conway where
 
 import Control.Monad.State.Strict
 import Data.Map.Strict (Map)

@@ -5,7 +5,7 @@ import Test.Framework (Test, testGroup)
 import Test.HUnit (Assertion, assertEqual)
 import Test.Framework.Providers.HUnit (testCase)
 
-import Experiments.Conway
+import Examples.Conway
 
 conwayTests :: Test
 conwayTests =
