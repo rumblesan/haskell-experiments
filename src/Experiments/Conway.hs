@@ -7,6 +7,11 @@ import Data.Monoid
 import qualified Data.Map.Strict as M
 import qualified Data.List as L
 
+-- Util
+
+to :: Int -> Int -> [Int]
+to a b = [a..(b - 1)]
+
 data Cell = Alive | Dead deriving (Eq, Ord)
 type Index = Int
 type Coordinate = (Index, Index)
@@ -25,12 +30,14 @@ instance Show GameData where
     let
       heading = mconcat ["Board ", show width, " * ", show height]
       cells = do
-        x <- [0..(height - 1)]
-        let rowCells = fmap (\y -> show $ fromMaybe Dead (M.lookup (x, y) board)) [0..(width - 1)]
+        x <- (0 `to` height)
+        let rowCells = fmap (\y -> getCell (x, y)) (0 `to` width)
         return $ mconcat rowCells
       shownCells = mconcat $ L.intersperse "\n" cells
     in
       mconcat [heading, "\n", shownCells]
+    where
+      getCell c = show $ fromMaybe Dead (M.lookup c board)
 
 
 instance Show Cell where
@@ -39,8 +46,8 @@ instance Show Cell where
 
 createBoard :: Int -> Int -> Board
 createBoard width height = M.fromList $ do
-      w <- [0..(width - 1)]
-      h <- [0..(height - 1)]
+      w <- (0 `to` width)
+      h <- (0 `to` height)
       let c = (w, h)
       return (c, Dead)
 
@@ -50,8 +57,8 @@ createGame width height = GameData width height (createBoard width height)
 getCoordinates :: Game [Coordinate]
 getCoordinates = gets (\g ->
     do
-      x <- [0..((gameWidth  g) - 1)]
-      y <- [0..((gameHeight g) - 1)]
+      x <- (0 `to` gameWidth g)
+      y <- (0 `to` gameHeight g)
       return (x, y)
   )
 
