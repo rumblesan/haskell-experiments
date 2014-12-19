@@ -12,6 +12,7 @@ cabal-version:       >=1.10
 executable experiments
   main-is:             Main.hs
   build-depends:       base >=4.7 && <4.8,
+                       containers,
                        mtl >=2.2,
                        operational,
                        regex-compat,
@@ -27,6 +28,7 @@ test-suite tests
   hs-source-dirs:     test,
                       src
   build-depends:      base,
+                      containers,
                       HUnit,
                       mtl >=2.2,
                       operational,

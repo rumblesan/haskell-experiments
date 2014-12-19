@@ -7,6 +7,7 @@ import Data.Monoid
 import Tests.MyTree (myTreeTests)
 import Tests.HaskVM (haskVMTests)
 import Tests.StateParser (stateParserTests)
+import Tests.Conway (conwayTests)
 import Tests.MonadT.StateParser (transformedStateParserTests)
 
 
@@ -17,7 +18,8 @@ main =
       myTreeTests,
       haskVMTests,
       stateParserTests,
-      transformedStateParserTests
+      transformedStateParserTests,
+      conwayTests
     ]
     mempty
 
