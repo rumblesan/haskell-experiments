@@ -4,6 +4,7 @@ import Experiments.MyTree
 import Experiments.HaskVM
 import Experiments.StateParser
 import Experiments.MonadT.StateParser
+import Experiments.Concurrency.Simple
 
 import Examples.Conway
 
