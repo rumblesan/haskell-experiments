@@ -1,4 +1,4 @@
-module Tests.MonadT.StateParser where
+module Tests.Experiments.MonadT.StateParser where
 
 import Test.Framework (Test, testGroup)
 import Test.HUnit (Assertion, assertEqual)

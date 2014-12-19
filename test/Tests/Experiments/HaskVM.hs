@@ -1,4 +1,4 @@
-module Tests.HaskVM where
+module Tests.Experiments.HaskVM where
 
 import Test.Framework (Test, testGroup)
 import Test.HUnit (Assertion, assertEqual)

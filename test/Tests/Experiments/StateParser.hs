@@ -1,4 +1,4 @@
-module Tests.StateParser where
+module Tests.Experiments.StateParser where
 
 import Test.Framework (Test, testGroup)
 import Test.HUnit (Assertion, assertEqual)

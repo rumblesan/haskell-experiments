@@ -1,4 +1,4 @@
-module Tests.Conway where
+module Tests.Examples.Conway where
 
 import Control.Monad.State.Strict
 import Test.Framework (Test, testGroup)

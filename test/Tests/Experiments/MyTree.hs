@@ -1,4 +1,4 @@
-module Tests.MyTree where
+module Tests.Experiments.MyTree where
 
 import Test.Framework (Test, testGroup)
 import Test.HUnit (Assertion, assertEqual)

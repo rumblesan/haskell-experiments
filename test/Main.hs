@@ -4,12 +4,12 @@ import Test.Framework
 
 import Data.Monoid
 
-import Tests.MyTree (myTreeTests)
-import Tests.HaskVM (haskVMTests)
-import Tests.StateParser (stateParserTests)
-import Tests.Conway (conwayTests)
-import Tests.MonadT.StateParser (transformedStateParserTests)
+import Tests.Experiments.MyTree (myTreeTests)
+import Tests.Experiments.HaskVM (haskVMTests)
+import Tests.Experiments.StateParser (stateParserTests)
+import Tests.Experiments.MonadT.StateParser (transformedStateParserTests)
 
+import Tests.Examples.Conway (conwayTests)
 
 main :: IO ()
 main =
