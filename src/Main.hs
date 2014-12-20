@@ -5,6 +5,7 @@ import Experiments.HaskVM
 import Experiments.StateParser
 import Experiments.MonadT.StateParser
 import Experiments.Concurrency.Simple
+import Experiments.Concurrency.SimpleSTM
 
 import Examples.Conway
 
