@@ -6,6 +6,7 @@ import Experiments.StateParser
 import Experiments.MonadT.StateParser
 import Experiments.Concurrency.Simple
 import Experiments.Concurrency.SimpleSTM
+import Experiments.Misc.MergeTimePeriods
 
 import Examples.Conway
 
