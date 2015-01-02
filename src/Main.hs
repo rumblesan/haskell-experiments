@@ -8,6 +8,7 @@ import Experiments.Concurrency.Simple
 import Experiments.Concurrency.SimpleSTM
 import Experiments.Misc.MergeTimePeriods
 
+import Examples.Equations.Parser
 import Examples.Conway
 
 main :: IO ()
