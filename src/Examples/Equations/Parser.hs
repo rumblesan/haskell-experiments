@@ -63,10 +63,12 @@ atom =     m_parens exprParser
     m_intToFloat = fmap fromIntegral m_integer
 
 
-mainParser :: MathParser Equation
-mainParser = cleanSurroundings $ Equation <$> exprParser <* equals <*> exprParser
+eqParser :: MathParser Equation
+eqParser = cleanSurroundings $ Equation <$> exprParser <* equals <*> exprParser
   where
     cleanSurroundings p = m_whiteSpace *> p <* eof
     equals = m_whiteSpace *> char '=' *> m_whiteSpace
 
+readEquation :: String -> Either ParseError Equation
+readEquation input = parse eqParser "equation" input
 
