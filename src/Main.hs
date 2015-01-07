@@ -7,6 +7,7 @@ import Experiments.MonadT.StateParser
 import Experiments.Concurrency.Simple
 import Experiments.Concurrency.SimpleSTM
 import Experiments.Misc.MergeTimePeriods
+import Experiments.Applicative.Introspection
 
 import Examples.Equations.Parser
 import Examples.Equations.Evaluator
