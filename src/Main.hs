@@ -6,6 +6,7 @@ import Experiments.StateParser
 import Experiments.MonadT.StateParser
 import Experiments.Concurrency.Simple
 import Experiments.Concurrency.SimpleSTM
+import Experiments.Concurrency.STMServer
 import Experiments.Misc.MergeTimePeriods
 import Experiments.Applicative.Introspection
 import Experiments.Applicative.CheapParser
