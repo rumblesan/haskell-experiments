@@ -4,6 +4,7 @@ import Experiments.MyTree
 import Experiments.HaskVM
 import Experiments.StateParser
 import Experiments.MonadT.StateParser
+import Experiments.MonadT.ErrorIO
 import Experiments.Concurrency.Simple
 import Experiments.Concurrency.SimpleSTM
 import Experiments.Concurrency.STMServer
