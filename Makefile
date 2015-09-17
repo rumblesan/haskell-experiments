@@ -61,6 +61,9 @@ check:
 connect:
 	$(DOCKER_EXEC) $(container_name) bash
 
+repl:
+	$(DOCKER_EXEC) $(container_name) cabal repl
+
 default:
 	build
 
