@@ -1,15 +1,16 @@
 module Experiments.MonadT.StateParser where
 
 import Control.Monad.State.Strict
-import Control.Monad.Trans.Error
+import Control.Monad.Except
 
 data Token = OpenParen | CloseParen | Letter Char deriving (Eq, Show)
 
 data AST = Group [AST] | Expression [Char] deriving (Eq, Show)
 
-type ParserError = Either String
 type ParserState = State [Token]
-type Parser = ErrorT String ParserState AST
+type ParserMonad a = ExceptT String ParserState a
+type Parser = ParserMonad AST
+type ParserOutput = Either String AST
 
 charLex :: Char -> Token
 charLex c = case c of
@@ -39,3 +40,5 @@ myParse = do
         Group _ -> throwError "shouldn'g get an AST here"
     [] -> throwError "shouldn't hit this"
 
+parse :: String -> Either String AST
+parse input = evalState (runExceptT myParse) (myLex input)
