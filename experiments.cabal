@@ -21,6 +21,21 @@ executable experiments
                        random,
                        stm,
                        transformers
+  other-modules:       Examples.Conway,
+                       Examples.Equations.Evaluator,
+                       Examples.Equations.Parser,
+                       Examples.Equations.Parser.AST,
+                       Experiments.Applicative.CheapParser,
+                       Experiments.Applicative.Introspection,
+                       Experiments.Concurrency.STMServer,
+                       Experiments.Concurrency.Simple,
+                       Experiments.Concurrency.SimpleSTM,
+                       Experiments.HaskVM,
+                       Experiments.Misc.MergeTimePeriods,
+                       Experiments.MonadT.ErrorIO,
+                       Experiments.MonadT.StateParser,
+                       Experiments.MyTree,
+                       Experiments.StateParser
   hs-source-dirs:      src
   default-language:    Haskell2010
 
@@ -28,7 +43,7 @@ executable experiments
 test-suite tests
   default-language:   Haskell2010
   type:               exitcode-stdio-1.0
-  main-is:            Main.hs
+  main-is:            Spec.hs
   hs-source-dirs:     test,
                       src
   build-depends:      base,
@@ -44,3 +59,18 @@ test-suite tests
                       test-framework-hunit,
                       test-framework-quickcheck2,
                       transformers
+  other-modules:       Examples.Conway,
+                       Examples.Equations.Evaluator,
+                       Examples.Equations.Parser,
+                       Examples.Equations.Parser.AST,
+                       Experiments.Applicative.CheapParser,
+                       Experiments.Applicative.Introspection,
+                       Experiments.Concurrency.STMServer,
+                       Experiments.Concurrency.Simple,
+                       Experiments.Concurrency.SimpleSTM,
+                       Experiments.HaskVM,
+                       Experiments.Misc.MergeTimePeriods,
+                       Experiments.MonadT.ErrorIO,
+                       Experiments.MonadT.StateParser,
+                       Experiments.MyTree,
+                       Experiments.StateParser
