@@ -1,13 +1,13 @@
-name:                experiments
-version:             0.1.0.0
-synopsis:            My Haskell Experiments
-homepage:            www.rumblesan.com
-license:             BSD3
-license-file:        LICENSE
-author:              Guy John
-maintainer:          guy@rumblesan.com
-build-type:          Simple
-cabal-version:       >=1.10
+name:                  experiments
+version:               0.1.0.0
+synopsis:              My Haskell Experiments
+homepage:              www.rumblesan.com
+license:               BSD3
+license-file:          LICENSE
+author:                Guy John
+maintainer:            guy@rumblesan.com
+build-type:            Simple
+cabal-version:         >=1.10
 
 executable experiments
   main-is:             Main.hs
@@ -41,24 +41,23 @@ executable experiments
 
 
 test-suite tests
-  default-language:   Haskell2010
-  type:               exitcode-stdio-1.0
-  main-is:            Spec.hs
-  hs-source-dirs:     test,
-                      src
-  build-depends:      base >= 4.7 && < 5
-                      containers,
-                      HUnit,
-                      mtl,
-                      operational,
-                      parsec,
-                      QuickCheck,
-                      random,
-                      regex-compat,
-                      test-framework,
-                      test-framework-hunit,
-                      test-framework-quickcheck2,
-                      transformers
+  type:                exitcode-stdio-1.0
+  main-is:             Spec.hs
+  hs-source-dirs:      test,
+                       src
+  build-depends:       base >= 4.7 && < 5,
+                       containers,
+                       HUnit,
+                       mtl,
+                       operational,
+                       parsec,
+                       QuickCheck,
+                       random,
+                       regex-compat,
+                       test-framework,
+                       test-framework-hunit,
+                       test-framework-quickcheck2,
+                       transformers
   other-modules:       Examples.Conway,
                        Examples.Equations.Evaluator,
                        Examples.Equations.Parser,
@@ -74,3 +73,8 @@ test-suite tests
                        Experiments.MonadT.StateParser,
                        Experiments.MyTree,
                        Experiments.StateParser
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/rumblesan/haskell-experiments
