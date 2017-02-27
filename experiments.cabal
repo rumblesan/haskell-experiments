@@ -11,7 +11,7 @@ cabal-version:       >=1.10
 
 executable experiments
   main-is:             Main.hs
-  build-depends:       base ==4.9.*,
+  build-depends:       base >= 4.7 && < 5,
                        containers,
                        mtl,
                        network,
@@ -46,7 +46,7 @@ test-suite tests
   main-is:            Spec.hs
   hs-source-dirs:     test,
                       src
-  build-depends:      base,
+  build-depends:      base >= 4.7 && < 5
                       containers,
                       HUnit,
                       mtl,
