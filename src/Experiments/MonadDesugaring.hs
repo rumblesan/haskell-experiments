@@ -3,7 +3,6 @@ module Experiments.MonadDesugaring where
 -- Use
 -- `ghc -c src/Experiments/MonadDesugaring.hs -ddump-ds`
 -- to see the desugared version
-
 desugar :: Int -> Maybe Int
 desugar i = do
   j <- errIfOdd i
@@ -53,12 +52,11 @@ desugar =
                 (+ @ Int GHC.Num.$fNumInt k_alJ j_alI)))
 
 -}
-
 errIfOdd :: Int -> Maybe Int
-errIfOdd i = if (i `mod` 2) == 1
-             then Nothing
-             else Just i
+errIfOdd i =
+  if (i `mod` 2) == 1
+    then Nothing
+    else Just i
 
 add1 :: Int -> Maybe Int
 add1 i = Just (i + 1)
-

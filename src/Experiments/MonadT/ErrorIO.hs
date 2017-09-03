@@ -1,15 +1,17 @@
 module Experiments.MonadT.ErrorIO where
 
-import Control.Monad.Except
-import System.Random
+import           Control.Monad.Except
+import           System.Random
 
 getRandomNumber :: IO Int
 getRandomNumber = randomRIO (0, 20)
 
-data RandError = RandError Int String deriving (Show)
+data RandError =
+  RandError Int
+            String
+  deriving (Show)
 
 type ErrorIO a = ExceptT RandError IO a
-
 
 errIfOdd :: ErrorIO Int
 errIfOdd = do
@@ -61,6 +63,3 @@ alwaysFail = do
 
 alwaysFailEither :: IO (Either RandError [Int])
 alwaysFailEither = runExceptT alwaysFail
-
-
-
